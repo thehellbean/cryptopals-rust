@@ -1,3 +1,10 @@
+mod util;
+
+use std::io::{self, BufRead};
+
 fn main() {
-    println!("Hello, world!");
+    let stdin = io::stdin();
+    let line = stdin.lock().lines().next().unwrap().unwrap();
+
+    println!("{}", util::hex_string_to_base64(line));
 }
